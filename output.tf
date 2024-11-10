@@ -27,3 +27,13 @@ output "private_subnet_cidr_block" {
   description = "The CIDR block of the private subnet"
   value       = aws_subnet.private_subnet.cidr_block
 }
+
+output "internet_gateway_id" {
+  description = "The ID of the Internet Gateway"
+  value       = aws_internet_gateway.gl_igw.id
+}
+
+output "public_route_table_id" {
+  description = "The ID of the public route table"
+  value       = aws_route_table.public_crt.id
+}
