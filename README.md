@@ -67,4 +67,14 @@ echo "ASG instance with IP $IP_ADDR" > /var/www/html/index.html
   + Description: opens port for SSH
   + ssh from anywhere
 
-15:26
+## NAT Gateway
++ Name: gl-nat
++ Subnet: public subnet
++ Needs elastic ip
+
+## Route Table
++ Name: private-crt
++ VPC: see above
++ Destination: 0.0.0.0/0
++ Target: NAT Gateway
++ Subnet Association: private
