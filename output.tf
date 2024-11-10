@@ -39,11 +39,31 @@ output "public_route_table_id" {
 }
 
 output "public_server_sg_id" {
-  description = "The ID of the public database security group"
+  description = "The ID of the public server security group"
   value       = aws_security_group.public_server_sg.id
 }
 
 output "public_server_ec2" {
-  description = "EC2 instance ID"
+  description = "The ID of the public EC2 instance"
   value       = aws_instance.public_server.id
+}
+
+output "private_server_sg_id" {
+  description = "The ID of the private server security group"
+  value       = aws_security_group.private_server_sg.id
+}
+
+output "private_server_ec2" {
+  description = "The ID of the private EC2 instance"
+  value       = aws_instance.private_server.id
+}
+
+output "nat_gateway_id" {
+  description = "The ID of the NAT Gateway"
+  value       = aws_nat_gateway.gl_nat_gw.id
+}
+
+output "private_route_table_id" {
+  description = "The ID of the private route table"
+  value       = aws_route_table.private_crt.id
 }
