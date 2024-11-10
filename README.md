@@ -78,3 +78,8 @@ echo "ASG instance with IP $IP_ADDR" > /var/www/html/index.html
 + Destination: 0.0.0.0/0
 + Target: NAT Gateway
 + Subnet Association: private
+
+## Peering connection
++ Name: gl-vpc-peer
++ Select a local peer: default
++ Other vpc: gl-vpc
