@@ -37,3 +37,13 @@ output "public_route_table_id" {
   description = "The ID of the public route table"
   value       = aws_route_table.public_crt.id
 }
+
+output "public_server_sg_id" {
+  description = "The ID of the public database security group"
+  value       = aws_security_group.public_server_sg.id
+}
+
+output "public_server_ec2" {
+  description = "EC2 instance ID"
+  value       = aws_instance.public_server.id
+}
