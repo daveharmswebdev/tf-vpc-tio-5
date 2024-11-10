@@ -55,4 +55,16 @@ IP_ADDR=$(TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws
 echo "ASG instance with IP $IP_ADDR" > /var/www/html/index.html
 ```
 
-9:22
+## EC2 Instance: Private
++ Name: private-server
++ AMI: Amazon Linux 2
++ Instance Type: T2 Micro
++ Key Pair: Liftshift
++ VPC: same as above
++ Subnet: Private subnet
++ Security Group
+  + Name: private-server-sg
+  + Description: opens port for SSH
+  + ssh from anywhere
+
+15:26

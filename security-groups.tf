@@ -33,3 +33,31 @@ resource "aws_security_group" "public_server_sg" {
     }
   )
 }
+
+resource "aws_security_group" "private_server_sg" {
+  vpc_id = aws_vpc.gl-vpc.id
+
+  description = "Opens port for SSH"
+
+  ingress {
+    description = "SSH"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["${aws_instance.public_server.private_ip}/32"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = merge(
+    local.common_tags,
+    {
+      Name = "private-server-SG"
+    }
+  )
+}

@@ -45,3 +45,9 @@ variable "instance_type" {
   type        = string
   default     = "t2.micro"
 }
+
+variable "key_pair" {
+  description = "Key pair for the EC2 instance"
+  type        = string
+  default     = "liftshift"
+}
