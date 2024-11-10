@@ -43,6 +43,12 @@ output "public_server_sg_id" {
   value       = aws_security_group.public_server_sg.id
 }
 
+output "vpc_peering_connection_id" {
+  description = "The ID of the VPC Peering Connection"
+  value       = aws_vpc_peering_connection.gl_vpc_to_default.id
+}
+
+
 output "public_server_ec2" {
   description = "The ID of the public EC2 instance"
   value       = aws_instance.public_server.id
